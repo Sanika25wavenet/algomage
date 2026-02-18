@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+server/.venv/
+server/.env
+server/uploads/
+server/faiss_index.bin
+server/test_selfie.png
+*.log
+
+# Node
+node_modules/
+client/.next/
+client/out/
+client/build/
+.pnpm-debug.log*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# OS
+Thumbs.db

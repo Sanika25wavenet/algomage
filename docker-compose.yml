@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: event-photo-redis
+    ports:
+      - "6379:6379"
+    restart: always
+
+  # You can uncomment this if you prefer running MongoDB locally
+  # mongodb:
+  #   image: mongo:latest
+  #   container_name: event-photo-mongodb
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo_data:/data/db
+
+volumes:
+  mongo_data:

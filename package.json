@@ -1,0 +1,9 @@
+{
+    "name": "intelligent-event-photo-retrieval",
+    "version": "1.0.0",
+    "description": "Intelligent Event Photo Retrieval System",
+    "scripts": {
+        "dev": "npx -y concurrently -n \"INFRA,SERVER,WORKER,CLIENT\" -c \"cyan,green,yellow,magenta\" \"docker-compose up\" \"cd server && .venv\\Scripts\\python -m uvicorn main:app --reload\" \"cd server && .venv\\Scripts\\python -m celery -A config.celery_app worker --loglevel=info --pool=eventlet\" \"cd client && npm run dev\"",
+        "stop": "docker-compose down"
+    }
+}

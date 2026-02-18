@@ -26,10 +26,14 @@ class Database:
             self.client.close()
             logger.info("MongoDB connection closed.")
 
-    def get_db(self):
+    @property
+    def db(self):
         """Returns the database instance."""
         if self.client:
             return self.client[settings.DATABASE_NAME]
         raise ConnectionError("Database not initialized. Call connect() first.")
+
+    def get_db(self):
+        return self.db
 
 db = Database()
